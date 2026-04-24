@@ -1,0 +1,1436 @@
+/* ============================================
+   阿里公安网站 - 时政要闻页面样式表
+   支持1K/2K/4K响应式适配
+   ============================================ */
+
+/* 引入阿里妈妈数黑体 */
+@font-face {
+    font-family: 'AlimamaShuHeiTi';
+    src: url('../images/Alimama_ShuHeiTi_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* CSS Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    min-width: 320px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 响应式图片基础样式 */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* 高DPI屏幕图片适配 */
+@media screen and (min-width: 1920px) and (-webkit-min-device-pixel-ratio: 1.5),
+       screen and (min-width: 1920px) and (min-resolution: 144dpi) {
+    .responsive-img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+@media screen and (min-width: 2560px) and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-width: 2560px) and (min-resolution: 192dpi) {
+    .responsive-img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* 容器 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 顶部工具栏专用容器 - 更宽的宽度 */
+.top-bar-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================================
+   1K及以下屏幕 (默认样式)
+   ============================================ */
+
+/* 头部区域 */
+.header {
+    position: relative;
+    width: 100%;
+}
+
+/* 顶部工具栏 - 位于背景图上方，无背景色 */
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 8px 0;
+    font-size: 12px;
+    background: transparent;
+}
+
+/* Logo区域 - 位于顶部工具栏下方 */
+.top-bar .logo-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 15px auto 0;
+    padding: 0 30px;
+}
+
+.top-bar .guohui {
+
+    height: 70px;
+}
+
+.top-bar .guohui img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.welcome-text {
+    color: #fff;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-links a {
+    color: #fff;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.top-links a:hover {
+    color: #ffcccc;
+}
+
+.top-links .divider {
+    color: rgba(255,255,255,0.7);
+}
+
+.header-bg {
+    width: 100%;
+    position: relative;
+}
+
+.header-bg img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 280px;
+    box-sizing: border-box;
+}
+
+/* 头部左侧区域 - 包含logo和页面标题 */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Logo区域 */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.guohui {
+    height: 90px;
+}
+
+.guohui img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: #fff;
+}
+
+.logo-main {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo-sub {
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+/* 页面标题区域 */
+.page-title-section {
+    text-align: left;
+    color: #fff;
+    margin-top: 130px;
+}
+
+.page-title {
+    font-family: 'AlimamaShuHeiTi', "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 8px;
+
+    margin-bottom: -5px;
+    background: linear-gradient(180deg, #FFFFFF 30%,#FFD788 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-size: 22px;
+    letter-spacing: 4px;
+    opacity: 0.95;
+    font-family: 'AlimamaShuHeiTi', "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: linear-gradient(90deg, #FFD788 30%,#FFD788 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+/* 内容包装器 - 包含导航栏和主要内容，白色背景 */
+.content-wrapper {
+    background: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: -8%;
+    position: relative;
+    z-index: 10;
+}
+
+/* 导航栏 */
+.main-nav {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-list li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 12px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.nav-list li:hover a {
+    color: #1664BD;
+}
+
+.nav-list li.active a {
+    color: #1664BD;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav-list li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: #1664BD
+}
+
+/* 搜索框 */
+.nav-search {
+    display: flex;
+    align-items: center;
+    padding: 8px 0 !important;
+    flex: 0.8 !important;
+    gap: 0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.search-input {
+    width: 100px;
+    padding: 5px 10px 5px 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 12px;
+    outline: none;
+    transition: padding-left 0.3s;
+}
+
+.search-input:focus {
+    padding-left: 10px;
+}
+
+.search-input:focus + .search-icon,
+.search-box:has(.search-input:focus) .search-icon {
+    opacity: 0;
+}
+
+.search-btn {
+    width: 50px;
+    height: 28px;
+    padding: 0;
+    background: #1664BD;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* 主要内容区域 */
+.main-content {
+    background: transparent;
+    padding: 30px 0;
+    min-height: 600px;
+}
+
+/* 区块标题 */
+.section-title {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+     padding: 0px 30px 30px 30px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+
+
+/* 新闻列表容器 */
+.news-list-container {
+    margin-bottom: 30px;
+    padding: 0 30px;;
+}
+
+/* 新闻项 */
+.news-item {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    transition: background 0.3s;
+}
+
+.news-item:hover {
+    background: #fafafa;
+}
+
+.news-item:hover .news-date {
+    background-color: #1664BD;
+}
+
+.news-item:hover .date-day,
+.news-item:hover .date-month {
+    color: #fff;
+}
+
+.news-item:hover .news-title a {
+    color: #1664BD;
+}
+
+.news-item.highlighted {
+    background: #fef6f6;
+}
+
+.news-item.highlighted:hover {
+    background: #fdf0f0;
+}
+
+/* 日期区域 */
+.news-date {
+    width: 60px;
+    min-width: 60px;
+    height:60px;
+    text-align: center;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.date-day {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.date-month {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* 高亮新闻的日期样式 */
+.news-item.highlighted .date-day {
+    color: #1664BD;
+}
+
+/* 新闻内容 */
+.news-content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.news-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.news-title a {
+    color: #333;
+    transition: color 0.3s;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.news-title a:hover {
+    color: #1664BD;
+}
+
+.news-summary {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* 新闻图片行 */
+.news-images-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+/* 新闻项内部的图片组样式 */
+.news-item-with-images .news-images-row {
+    padding: 15px 0 0 0;
+    border-bottom: none;
+}
+
+.news-image-item {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+    padding-bottom: 75%; /* 4:3比例 */
+}
+
+.news-image-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-image-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 分页器 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.page-btn,
+.page-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.page-btn {
+    padding: 0 10px;
+}
+
+.page-btn img {
+    width: 12px;
+    height: 12px;
+}
+
+.page-num:hover,
+.page-btn:hover {
+    border-color: #1664bd;
+    color: #1664bd;
+}
+
+.page-num.active {
+    background: #1664bd;
+    border-color: #1664bd;
+    color: #fff;
+}
+
+.page-ellipsis {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 页脚 */
+.footer {
+    background: linear-gradient(135deg, #0863CE 0%, #0d2d5a 100%);
+    padding: 25px 0;
+}
+
+.footer-content {
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-links .divider {
+    color: rgba(255,255,255,0.5);
+    margin: 0 8px;
+}
+
+.footer-license,
+.footer-copyright {
+    opacity: 0.8;
+}
+
+/* ============================================
+   2K屏幕适配 (1440px - 2559px)
+   ============================================ */
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1400px;
+        padding: 0 20px;
+    }
+
+    .content-wrapper {
+        max-width: 1200px;
+        margin-top: -12%;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 顶部工具栏 */
+    .top-bar {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .top-bar-container {
+        max-width: 1600px;
+        padding: 0 40px;
+    }
+
+    .top-bar .logo-section {
+        max-width: 1600px;
+        padding: 0 40px;
+        margin-top: 20px;
+    }
+
+    .top-bar .guohui {
+       
+        height: 90px;
+    }
+
+    .welcome-text {
+        font-size: 14px;
+    }
+
+    /* 头部区域 */
+    .header-content {
+        padding: 120px 20px 30px;
+        height: 350px;
+    }
+
+    .header-left {
+        gap: 25px;
+    }
+
+    .guohui {
+        height: 80px;
+    }
+
+    .logo-section {
+        gap: 20px;
+    }
+
+    .logo-main {
+        font-size: 36px;
+        letter-spacing: 6px;
+    }
+
+    .logo-sub {
+        font-size: 13px;
+    }
+
+    .page-title-section {
+        text-align: left;
+        margin-top: 80px;
+    }
+
+    .page-title {
+        font-family: 'AlimamaShuHeiTi', "Microsoft YaHei", "PingFang SC", sans-serif;
+        font-size: 60px;
+        letter-spacing: 12px;
+        background: linear-gradient(180deg, #FFFFFF 30%,#FFD788 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: -7px;
+    }
+
+    .page-subtitle {
+        font-size: 25px;
+        letter-spacing: 6px;
+        color:#FFD788;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+    }
+
+    /* 导航栏 */
+    .nav-list li a {
+        padding: 14px 0;
+        font-size: 16px;
+    }
+
+    .nav-search {
+        padding: 10px 0 !important;
+    }
+
+    .search-input {
+        width: 120px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .search-btn {
+        width: 36px;
+        height: 32px;
+    }
+
+    .search-btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* 主要内容 */
+    .main-content {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        padding: 0px 30px 30px 30px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+        padding-left: 18px;
+    }
+
+
+
+    /* 新闻列表 */
+    .news-item {
+        padding: 25px 0;
+    }
+
+    .news-date {
+        width: 70px;
+        min-width: 70px;
+        height:70px;
+        margin-right: 25px;
+        padding: 12px 0;
+    }
+
+    .date-day {
+        font-size: 32px;
+    }
+
+    .date-month {
+        font-size: 12px;
+    }
+
+    .news-title {
+        font-size: 17px;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .news-summary {
+        font-size: 14px;
+    }
+
+    /* 新闻图片 */
+    .news-images-row {
+        gap: 25px;
+        padding: 30px 0;
+    }
+
+    .news-item-with-images .news-images-row {
+        padding: 20px 0 0 0;
+    }
+
+    /* 分页器 */
+    .pagination {
+        gap: 10px;
+        margin-top: 40px;
+    }
+
+    .page-btn,
+    .page-num {
+        min-width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .page-btn img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .page-ellipsis {
+        font-size: 15px;
+    }
+
+    /* 页脚 */
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-content {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   4K屏幕适配 (>= 2560px)
+   ============================================ */
+@media screen and (min-width: 2560px) {
+    html {
+        font-size: 22px;
+    }
+
+    .container {
+        max-width: 2000px;
+        padding: 0 30px;
+    }
+
+    .content-wrapper {
+        max-width: 1600px;
+        margin-top: -11%;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 顶部工具栏 */
+    .top-bar {
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    .top-bar-container {
+        max-width: 2200px;
+        padding: 0 60px;
+    }
+
+    .top-bar .logo-section {
+        max-width: 2200px;
+        padding: 0 60px;
+        margin-top: 25px;
+    }
+
+    .top-bar .guohui {
+        width: 120px;
+        height: 120px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+    }
+
+    /* 头部区域 */
+    .header-content {
+        padding: 160px 30px 40px;
+        height: 450px;
+    }
+
+    .header-left {
+        gap: 30px;
+    }
+
+    .guohui {
+        height: 110px;
+    }
+
+    .logo-section {
+        gap: 30px;
+    }
+
+    .logo-main {
+        font-size: 48px;
+        letter-spacing: 8px;
+    }
+
+    .logo-sub {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .page-title-section {
+        text-align: left;
+        margin-top: 100px;
+    }
+
+    .page-title {
+        font-family: 'AlimamaShuHeiTi', "Microsoft YaHei", "PingFang SC", sans-serif;
+        font-size: 80px;
+        letter-spacing: 16px;
+        background: linear-gradient(18deg, #FFFFFF 0%, #FFD788 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+        font-size: 31px;
+        letter-spacing: 8px;
+        background: linear-gradient(90deg, #FFFFFF 0%, #FFD788 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+    }
+
+    /* 导航栏 */
+    .nav-list li a {
+        padding: 18px 0;
+        font-size: 20px;
+    }
+
+    .nav-search {
+        padding: 12px 0 !important;
+    }
+
+    .search-input {
+        width: 160px;
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 6px 0 0 6px;
+    }
+
+    .search-btn {
+        width: 44px;
+        height: 40px;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .search-btn img {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* 主要内容 */
+    .main-content {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+         padding: 0px 30px 30px 30px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+        padding-left: 22px;
+    }
+
+  
+
+    /* 新闻列表 */
+    .news-item {
+        padding: 30px 0;
+    }
+
+    .news-date {
+        width: 90px;
+        min-width: 90px;
+        height:90px;
+        margin-right: 35px;
+        padding: 15px 0;
+    }
+
+    .date-day {
+        font-size: 40px;
+    }
+
+    .date-month {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .news-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .news-summary {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* 新闻图片 */
+    .news-images-row {
+        gap: 35px;
+        padding: 40px 0;
+    }
+
+    .news-item-with-images .news-images-row {
+        padding: 25px 0 0 0;
+    }
+
+    .news-image-item {
+        border-radius: 6px;
+    }
+
+    /* 分页器 */
+    .pagination {
+        gap: 12px;
+        margin-top: 50px;
+    }
+
+    .page-btn,
+    .page-num {
+        min-width: 46px;
+        height: 46px;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+
+    .page-btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .page-ellipsis {
+        font-size: 18px;
+    }
+
+    /* 页脚 */
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer-content {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   移动端适配 (< 768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
+        margin-top: -16%;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 顶部工具栏 */
+    .top-bar {
+        font-size: 11px;
+        padding: 6px 0;
+    }
+
+    .top-bar-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .top-bar .logo-section {
+        max-width: 100%;
+        padding: 0 15px;
+        margin-top: 10px;
+    }
+
+    .top-bar .guohui {
+       
+        height: 50px;
+    }
+
+    .welcome-text {
+        font-size: 11px;
+    }
+
+    .guohui {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-section {
+        gap: 8px;
+    }
+
+    .logo-main {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .logo-sub {
+        font-size: 9px;
+    }
+
+    .page-title-section {
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    .page-title {
+        font-family: 'AlimamaShuHeiTi', "Microsoft YaHei", "PingFang SC", sans-serif;
+        font-size: 24px;
+        letter-spacing: 4px;
+        background: linear-gradient(18deg, #FFFFFF 0%, #FFD788 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 3px;
+    }
+
+    .page-subtitle {
+        font-size: 17px;
+        letter-spacing: 2px;
+        background: linear-gradient(90deg, #FFFFFF 30%,#FFD788 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+    }
+
+    /* 导航栏 */
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .nav-list li {
+        flex: 1 1 33.33%;
+    }
+
+    .nav-list li a {
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    .nav-search {
+        flex: 1 1 100% !important;
+        justify-content: center;
+        padding: 8px 10px !important;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+
+    /* 新闻列表 */
+    .news-item {
+        padding: 15px 0;
+    }
+
+    .news-date {
+        width: 45px;
+        min-width: 45px;
+        height:45px;
+        margin-right: 12px;
+        padding: 8px 0;
+    }
+
+    .date-day {
+        font-size: 20px;
+    }
+
+    .date-month {
+        font-size: 10px;
+    }
+
+    .news-title {
+        font-size: 13px;
+    }
+
+    .news-summary {
+        font-size: 11px;
+    }
+
+    /* 新闻图片 */
+    .news-images-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .news-item-with-images .news-images-row {
+        padding: 10px 0 0 0;
+    }
+
+    /* 分页器 */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .page-btn,
+    .page-num {
+        min-width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   警务文化列表页面样式 - 网格卡片布局
+   支持1K/2K/4K响应式适配
+   ============================================ */
+
+/* ---------- 1K及以下屏幕 (默认样式) ---------- */
+
+/* 警务文化网格列表容器 */
+.jingwu-grid-container {
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+
+/* 警务文化网格布局 - 每行3列 */
+.jingwu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* 警务文化卡片项 */
+.jingwu-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.jingwu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 卡片图片区域 - 4:3比例 */
+.jingwu-card-image {
+    width: 100%;
+    position: relative;
+    padding-bottom: 75%; /* 4:3比例 = 3/4 = 75% */
+    overflow: hidden;
+}
+
+.jingwu-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.jingwu-card:hover .jingwu-card-image img {
+    transform: scale(1.05);
+}
+
+/* 卡片内容区域 */
+.jingwu-card-content {
+    padding: 12px 0;
+}
+
+/* 卡片标题 */
+.jingwu-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jingwu-card-title a {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.jingwu-card-title a:hover {
+    color: #1664BD;
+}
+
+/* ---------- 2K屏幕适配 (1440px - 2559px) ---------- */
+@media screen and (min-width: 1440px) {
+    /* 警务文化网格列表容器 */
+    .jingwu-grid-container {
+        padding: 0 40px;
+        margin-bottom: 40px;
+    }
+
+    /* 警务文化网格布局 */
+    .jingwu-grid {
+        gap: 30px;
+    }
+
+    /* 警务文化卡片项 */
+    .jingwu-card {
+        border-radius: 6px;
+    }
+
+    .jingwu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    /* 卡片内容区域 */
+    .jingwu-card-content {
+        padding: 16px 0;
+    }
+
+    /* 卡片标题 */
+    .jingwu-card-title {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+/* ---------- 4K屏幕适配 (>= 2560px) ---------- */
+@media screen and (min-width: 2560px) {
+    /* 警务文化网格列表容器 */
+    .jingwu-grid-container {
+        padding: 0 60px;
+        margin-bottom: 50px;
+    }
+
+    /* 警务文化网格布局 */
+    .jingwu-grid {
+        gap: 40px;
+    }
+
+    /* 警务文化卡片项 */
+    .jingwu-card {
+        border-radius: 8px;
+    }
+
+    .jingwu-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 卡片内容区域 */
+    .jingwu-card-content {
+        padding: 20px 0;
+    }
+
+    /* 卡片标题 */
+    .jingwu-card-title {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+/* ---------- 移动端适配 (< 768px) ---------- */
+@media screen and (max-width: 768px) {
+    /* 警务文化网格列表容器 */
+    .jingwu-grid-container {
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    /* 警务文化网格布局 - 移动端改为2列 */
+    .jingwu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* 卡片内容区域 */
+    .jingwu-card-content {
+        padding: 8px 0;
+    }
+
+    /* 卡片标题 */
+    .jingwu-card-title {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
